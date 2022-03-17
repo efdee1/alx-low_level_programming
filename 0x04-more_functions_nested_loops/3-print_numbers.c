@@ -2,15 +2,13 @@
 
 /**
  * print_numbers - Prints the numbers from 0-9.
- * @void: no return
  */
 void print_numbers(void)
 {
-char i,
+int num;
 
-(for (i = '0'; i <= '9'; i++));
-{
-putchar(i);
-}
-putchar('\n');
+for (num = 0; num <= 9; num++)
+_putchar((num % 10) + '0');
+
+_putchar('\n');
 }
