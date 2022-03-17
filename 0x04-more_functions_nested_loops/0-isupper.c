@@ -3,8 +3,9 @@
 /**
  * _isupper - prints 1 or 0 depending on input
  * @c: input type variable
- * Description: checks for uppercase letters
- * Return: 0.
+ *
+ * Description: checks for uppercase letter
+ * Return: Aways (0).
  */
 
 int _isupper(int c)
