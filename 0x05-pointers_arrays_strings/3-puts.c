@@ -1,17 +1,19 @@
 #include "main.h"
 
 /**
- * _puts - main function.
- * @str: Pointer with the address value.
- * Description: This function takes a pointer to an int as parameter
- *
- * Return: none.
+ * _puts - function for printing strings
+ * @str: string to be printed
  */
+
 void _puts(char *str)
 {
-	while (*str != '\0')
+	int i;
+
+	i = 0;
+
+	for (i = 0; str[i] != 0; i++)
 	{
-		_putchar(*str++);
+		_putchar(str[i]);
 	}
-	_putchar('\n');
+	_putchar(10);
 }
