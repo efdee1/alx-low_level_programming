@@ -5,27 +5,26 @@
  *
  * @dest: Destiny
  * @src: Source
- * @n: number of elements to concatenate in
- *
- * Return: pointer to resulting `dest`
+ * @n: Variable
+ * Return: Destiny
  */
-
-char *_strncpy(char *dest, char *src, int n)
+ /**------------------Hello------World--1||1024*/
+char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int i = 0;
+	int r = 0;
+	int tam = 0;
 
-	for (i = 0; src[i] != '\0'; i++)
+	for (; dest[tam];)
 	{
-		if (i < n)
-		{
-			dest[i] = src[i];
-		}
+		tam++;
 	}
 
-	j = i;
-
-	for (; n > j; j++)
-		dest[j] = '\0';
-
+	while (r < n && src[r])
+	{
+		dest[tam + i] = src[r];
+		i++;
+		r++;
+	}
 	return (dest);
 }
