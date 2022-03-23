@@ -2,12 +2,15 @@
 
 /**
  * _strncat - Funtion
+ *
  * @dest: Destiny
  * @src: Source
- * @n: Variable
- * Return: Destiny
+ * @n: number of elements to concatenate in
+ *
+ * Return: pointer to resulting `dest`
  */
-char *_strncat(char *dest, char *src, int n)
+
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i, j;
 
