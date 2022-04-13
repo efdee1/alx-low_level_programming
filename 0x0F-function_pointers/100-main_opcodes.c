@@ -1,29 +1,26 @@
-#include <stdio.h>
+#include "function_pointers.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * main - prints the opcodes of its own function
- * @argc: arguement count
- * @argv: arguement vector
+ * main - check the code for Holberton School students.
+ * @argc: the number of args
+ * @argv: argument vector
  *
- * Return: opcodes.
+ * Return: Always 0.
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int num_of_bytes, i;
+	char *p = (char *)main;
+	int b;
 
 	if (argc != 2)
-	{
-		printf("Error\n");
-		exit(1);
-	}
-	num_of_bytes = atoi(argv[i]);
-	if (num_of_bytes < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
-	system("gcc 100-main_opcodes.c -c");
-	system("objdump -D 100-main_opcodes.o");
+		printf("Error\n"), exit(1);
+	b = atoi(argv[1]);
+	if (b < 0)
+		printf("Error\n"), exit(2);
+
+	while (b--)
+		printf("%02hhx%s", *p++, b ? " " : "\n");
 	return (0);
 }
