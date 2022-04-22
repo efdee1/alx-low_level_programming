@@ -1,19 +1,22 @@
-#include <stdio.h>
 #include "list.h"
-#include <stdlib.h>
+#include <stdio.h>
 /**
- * print_list = print all numbers alements of a list_t list
- * @h: songly linked list to print
- * Return number of nodes in the list
+ * print_list - print all numbers alements of a list_t list
+ * @h: linked list to print
+ *
+ * Return: the number of nodes
  */
 size_t print_list(const list_t *h)
 {
-	size_t i;
+	size_t i = 0;
+	const list_t *current = h;
 
-	for (i =o; h; i++)
+	while (current != NULL)
 	{
-		printf("[%d]  %s\n", h->len, h->str;
-		 h = h->next
+		printf("[%d]  %s\n", current->len,
+				current->str != NULL ? current->str : "(nil)");
+		current = current->next;
+		i++;
 	 }
 	return (1);
 }		
