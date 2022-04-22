@@ -1,38 +1,31 @@
 #include "lists.h"
-#include <string.h>
-
 /**
- * *add_node - adds a node to a linked list head
- * @head: linked list head
- * @str: string element of the linked list
- * Return: number of elements
+ * add_node - add a new node at the beginning of a list
+ * @head: head of the linked list
+ * @str: string in the struct
+ *
+ * Return: the address of the new element
  */
-
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *new_node;
-	int len_str;
+list_t *newnode;
+int newelem = 0;
 
-	new_node = (list_t *) malloc(sizeof(list_t));
+newnode = malloc(sizeof(list_t));
 
-	if (new_node == NULL)
-	{
-		free(new_node);
-		return (NULL);
-	}
+if (newnode == NULL)
+{
+return (NULL);
+}
+newnode->str = strdup(str);
 
-	new_node->str = strdup(str);
-	if (new_node->str == NULL)
-	{
-		free(new_node);
-		return (NULL);
-	}
-	for (len_str = 0; str[len_str] != '\0';  len_str++)
-	;
+while (str[newelem])
+{
+newelem++;
+}
 
-	new_node->len = len_str;
-	new_node->next = *head;
-	*head = new_node;
-
-	return (new_node);
+newnode->len = newelem;
+newnode->next = *head;
+*head = newnode;
+return (*head);
 }
