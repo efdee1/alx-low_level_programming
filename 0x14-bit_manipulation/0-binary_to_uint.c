@@ -3,32 +3,22 @@
 /**
  * binary_to_uint - converts binary to unsigned int
  * @b: input binary
- * Return: converted number or 0
+ * Return: if  b = null or contains chars not 0 or 1 - 0. otherwise - converted number or 0
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int u_int;
-	int len, bin;
+	unsigned int num = 0;
+	int len = 0;
 
-	if (!b)
+	if (b[len] == '\0')
 		return (0);
 
-	u_int = 0;
-
-	for (len = 0; b[len] != '\0'; len++)
-		;
-
-	for (len--, bin = 1; len >= 0; len--, bin *= 2)
+	while ((b[len] == '0') || (b[len] == '1'))
 	{
-		if (b[len] != '0' && b[len] != '1')
-		{
-			return (0);
-		}
-
-		if (b[len] & 1)
-		{
-			u_int += bin;
-		}
+		num <<= 1;
+		num += b[len] - '0';
+		len++
 	}
-	return (u_int);
+
+	return (num);
 }
